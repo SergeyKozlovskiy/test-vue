@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div id="app">
+  <Table :person="person"/>
+</div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
 
+
+<script>
+import Table from '../components/Table'
 export default {
-  name: 'App',
+  name: 'app',
+  data(){
+    return {
+      person: [
+        {
+          name: 'Sergey',
+          age: 30
+        },
+        {
+          name: 'Tatyana',
+          age: 34
+        }
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    Table
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
