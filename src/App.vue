@@ -7,14 +7,15 @@
 
 
 <script>
-import Table from '../components/Table'
+import Table from '../components/Table';
+
 export default {
   name: 'app',
   data(){
     return {
       person: [
         {
-          name: 'Sergey',
+          name: 'SergeyK',
           age: 30
         },
         {
@@ -28,4 +29,5 @@ export default {
     Table
   }
 }
+
 </script>
