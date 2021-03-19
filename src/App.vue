@@ -1,6 +1,7 @@
 <template>
 <div id="app">
-  <Table :person="person"/>
+  <Table :data="data"/>
+  <a-button type="primary">Button</a-button>
 </div>
 </template>
 
@@ -9,25 +10,25 @@
 <script>
 import Table from '../components/Table';
 
-export default {
-  name: 'app',
+export default({
+  new: '#app',
   data(){
     return {
-      person: [
-        {
-          name: 'SergeyK',
-          age: 30
-        },
-        {
-          name: 'Tatyana',
-          age: 34
-        }
-      ]
+     data: {},
     }
   },
   components: {
     Table
-  }
-}
-
+  },
+  async mounted() {
+    const response = await fetch("./server.json")
+    const result= await response.json()
+    this.data = result.data
+    console.log(this.data)
+  },
+})
 </script>
+
+<style>
+
+</style>

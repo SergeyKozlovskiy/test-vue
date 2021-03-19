@@ -1,16 +1,15 @@
 <template>
     <table>
-    <tr v-for="(pers, index) in person" :key="index">
+    <tr v-for="(pers, index) in data" :key="index">
         <td>{{pers.name}}</td>
-        <td>{{pers.age}}</td>
+        <td>{{pers.adresses}}</td>
     </tr>
 </table>
 </template>
 
 <script>
 export default {
-    props: ['person']
-    
+    props: ['data'] 
 }
 </script>
 
